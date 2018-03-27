@@ -1,0 +1,142 @@
+/**** CSS Reset and base font set ****/
+html, body, header, nav, footer, section, form, fieldset, label, input, textarea, p, div, h1, h2, h3, h4, h5, h6 {
+    border: 0;
+    margin: 0;
+    padding: 0;   
+}
+html {
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+h2 {
+    padding: 1%;
+}
+
+/**** Flex container ****/
+
+.flex-container {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+header {
+    background-image: url(../img/banner.jpg);
+    text-align: center;
+    height: 150px;
+    order: 2;
+}
+.navbar {
+    margin-bottom: 1px;
+}
+nav {
+    order: 1;
+}
+.page-flex-container {
+    background-color: #FCFCFC;
+    order: 3;
+    width: 100%;
+}
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 50px;
+    order: 4;
+    padding: 1%;
+}
+.outer-book-container {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+}
+.inner-book-container {
+    margin: 1%;
+    padding: 1%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 1px solid grey;
+    text-align: center;
+    height: auto;
+    justify-content: center;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+.book_top, .book_bottom {
+    width: 100%;
+}
+.book_top {
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.book_top p {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    
+}
+.book_top p:nth-of-type(2) {
+    position: absolute;
+    bottom: 5px;
+}
+/**** Login form ****/
+.login-form {
+    height: 800px;
+    width: 50%;
+    margin: 0 auto;
+    vertical-align: middle;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+/***** Index page *****/
+p.book_title {
+    font-size: 18px;
+}
+
+/**** Update form ****/
+.form-flex {
+    display: flex;
+    width: 80%;
+    min-height: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.main-drop-down {
+    width: 100%;
+    background-color: aqua;
+    height: 2em;
+    
+}
+.left-column {
+    width: 50%;
+    background-color: cadetblue;
+    height: 20em;
+    float: left;
+}
+.right-column {
+    width: 50%;
+    background-color: darkgray;
+    height: 20em;
+    float: right;
+}
+#update {
+    float: right;
+}
+.form-flex label {
+    width: 50%;
+    float: left;
+}
+.form-flex input {
+    width: 50%;
+/*    float: right;*/
+}
+.buttonlink, .buttonlink:hover, .buttonlink:visited {
+    text-decoration: none;
+    color: white;
+}
