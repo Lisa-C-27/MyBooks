@@ -1,30 +1,31 @@
 function deleteBook(BookID) {
 
     var r = confirm("Are you sure you want to delete!");
-    if (r == true) { 
-        var $deleteurl = "../../Model/dbfunctions.php?BookID=" + BookID;
+    if (r == true) {
+        var $deleteurl = "../../Model/delete_process.php?BookID=" + BookID;
         $.ajax( {
             url: $deleteurl,
-            method: 'get',
+            method: 'post',
             data: $('#deletebutton').serialize(),
             datatype: 'json',
-            success: function(res) {
-                alert('success'); 
+            success: function(result) {
+                // alert('success');
+                console.log(result);
                 var div = document.getElementById(BookID);
                 if (div.parentNode) {
                     div.parentNode.removeChild(div);
             };
             },
-            error: function(err) {
-                console.log(err);
+            error: function(error) {
+                console.log(error);
             }
         });
-        
-    } 
+
+    }
 
 }
 
-function updateBook() { 
+function updateBook() {
     $.ajax( {
         url: '../../Model/update_process.php',
         method: 'post',
