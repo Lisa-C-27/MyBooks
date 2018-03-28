@@ -8,28 +8,30 @@ else {
 }
 ?>
 <?php
-    include "header.php"; //loads the header
-
-    include "nav.php"; //loads the navigation bar
-include '../../Model/dbfunctions.php'; //loads all database functions file
+include "header.php"; //loads the header
+include "nav.php"; //loads the navigation bar
+include '../../Model/connect.php'; //loads all database functions file
 ?>
-<div class="page-flex-container">
-    <h2>Books Library</h2>
-    <div class="outer-book-container">
-        <form id="deletebutton">
+
+
         <?php
 
 // Need to move this into a funtion in the dbfunctions file - change the below foreach loop to a form
 
-    $imagesql = "SELECT book.BookID, book.BookTitle, book.YearofPublication, image.imageURL, author.Name, author.Surname, book.MillionsSold
-From book
-INNER JOIN author ON author.AuthorID = book.AuthorID
-INNER JOIN image ON image.imageID = book.imageID;";
+    $imagesql = "SELECT * From book INNER JOIN author ON author.AuthorID = book.AuthorID INNER JOIN image ON image.imageID = book.imageID;";
 //    $conn = new PDO("mysql:host=localhost;dbname=mybooks", 'root', '');
 //    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($imagesql);
     $stmt->execute();
     $result = $stmt->fetchAll();
+?>
+
+<div class="page-flex-container">
+    <h2>Books Library</h2>
+    <div class="outer-book-container">
+<form id="deletebutton">
+
+<?php
     foreach($result AS $row) {
 
         echo '<section class="inner-book-container">
