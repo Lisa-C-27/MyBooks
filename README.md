@@ -12,3 +12,5 @@ It needs to be able to do the following:
  - From input must be validated and sanitised
  - PHP PDO extension is to be used
  - The website must be responsive, simple and professional
+ 
+ TESTING BRANCHES
