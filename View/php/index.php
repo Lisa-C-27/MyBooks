@@ -1,4 +1,5 @@
 <?php
+// hello lisa =)
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 }
@@ -16,10 +17,10 @@ include '../../Model/dbfunctions.php'; //loads all database functions file
     <h2>Books Library</h2>
     <div class="outer-book-container">
         <form id="deletebutton">
-        <?php 
+        <?php
 
 // Need to move this into a funtion in the dbfunctions file - change the below foreach loop to a form
-            
+
     $imagesql = "SELECT book.BookID, book.BookTitle, book.YearofPublication, image.imageURL, author.Name, author.Surname, book.MillionsSold
 From book
 INNER JOIN author ON author.AuthorID = book.AuthorID
@@ -36,7 +37,7 @@ INNER JOIN image ON image.imageID = book.imageID;";
         <p class="book_title">'. $row['BookTitle'] . '</p>
         <p>'. $row['YearofPublication'] . '</p>
         </article>
-        <img src="' . $row['imageURL'] . '"> 
+        <img src="' . $row['imageURL'] . '">
         <article class="book_bottom">
         <p>'. $row['Name'] . ' '. $row['Surname'] . '</p>
         <p>Millions Sold: ' . $row['MillionsSold'] . '</p>
