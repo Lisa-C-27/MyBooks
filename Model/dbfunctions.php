@@ -1,7 +1,7 @@
 <?php
 //session_start();
 //header('Content-Type: application/json');
-include 'connect.php';
+// include 'connect.php';
 
 
 function delete_book($BookID) {
@@ -10,16 +10,6 @@ function delete_book($BookID) {
     $stmt = $conn->prepare($delete_sql);
     $result = $stmt->execute();
     return $result;
-
-
-if(isset($_GET['BookID'])) {
-if(delete_book($_GET['BookID'])) {
-    echo json_encode(Array('BookDelete'=>true));
-} else {
-    echo json_encode(Array('BookDelete'=>false));
-}
-    exit();
-}
 }
 
 function select_one_book($BookID) {
@@ -34,7 +24,7 @@ INNER JOIN author ON author.AuthorID = book.AuthorID WHERE BookID='" . $_GET['Bo
 function updateOneBook($postdata, $BookID) {
     include 'connect.php';
     $update_sql = "UPDATE book INNER JOIN author ON author.AuthorID = book.AuthorID SET BookTitle = :btitle, YearofPublication = :yop, Name = :name, Surname = :sname, MillionsSold = :mils WHERE BookID = :bid;";
-    
+
     $stmt = $conn->prepare($update_sql);
     $stmt->bindParam(':btitle', sanitise_input($postdata['BookTitle']), PDO::PARAM_STR);
     $stmt->bindParam(':yop', sanitise_input($postdata['YearofPublication']), PDO::PARAM_STR);
