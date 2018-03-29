@@ -5,7 +5,7 @@ function deleteBook(BookID) {
         var $deleteurl = "../../Model/delete_process.php?BookID=" + BookID;
         $.ajax( {
             url: $deleteurl,
-            method: 'post',
+            method: 'get',
             data: $('#deletebutton').serialize(),
             datatype: 'json',
             success: function(result) {

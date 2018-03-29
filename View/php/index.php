@@ -34,7 +34,7 @@ include '../../Model/connect.php'; //loads all database functions file
 <?php
     foreach($result AS $row) {
 
-        echo '<section class="inner-book-container">
+        echo '<section class="inner-book-container" id="'. $row['BookID'] . '">
         <article class="book_top">
         <p class="book_title">'. $row['BookTitle'] . '</p>
         <p>'. $row['YearofPublication'] . '</p>
@@ -45,8 +45,8 @@ include '../../Model/connect.php'; //loads all database functions file
         <p>Millions Sold: ' . $row['MillionsSold'] . '</p>
         </article>
         <div class="edit_delete_container">
-            <button class="btn btn-primary btn-inline" value="edit"><a class="buttonlink" href="page_editbook.php?BookID='. $row['BookID'] . '">Edit</a></button>
-            <button class="btn btn-primary btn-inline" value="delete" onclick="deleteBook(' . $row['BookID'] . ')">Delete</button>
+            <button type="button" class="btn btn-primary btn-inline" value="edit"><a class="buttonlink" href="page_editbook.php?BookID='. $row['BookID'] . '">Edit</a></button>
+            <button type="button" class="btn btn-primary btn-inline" value="delete" onclick="deleteBook(' . $row['BookID'] . ')">Delete</button>
         </div>
         </section>';
     }
