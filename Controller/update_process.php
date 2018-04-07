@@ -1,8 +1,8 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-include 'connect.php';
-include 'dbfunctions.php';
+include '../Model/connect.php';
+include '../Model/dbfunctions.php';
 ?>
 <?php
 
@@ -21,9 +21,11 @@ if(isset($_GET['BookID'])) {
 }
 if(isset($_POST)) {
     if(updateOneBook($_POST, $_GET['BookID'])) {
-        echo json_encode(Array('userUpdate'=>true ));
+        return true;
+//        echo json_encode(Array('userUpdate'=>true ));
     } else {
-        echo json_encode('userUpdate'=>false ));
+        return false;
+//        echo json_encode(Array('userUpdate'=>false ));
     }
     exit();
 }

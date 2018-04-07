@@ -1,8 +1,8 @@
 <?php
   session_start();
   header('Content-Type: application/json');
-  include 'connect.php';
-  include 'dbfunctions.php';
+  include '../Model/connect.php';
+  include '../Model/dbfunctions.php';
 ?>
 
 <?php
