@@ -9,8 +9,10 @@ else {
 ?>
 <?php
 include "header.php";
+include '../../Model/connect.php';
 include '../../Model/dbfunctions.php';
 include "nav.php";
+
 ?>
 
 <?php
@@ -35,14 +37,15 @@ $bookdetails = select_one_book($_GET['BookID']);
                 <input id="sold" name="MillionsSold" type="text" value="<?php echo $bookdetails['MillionsSold'];?>">
                 <button type="button" id="update" onclick="updateBook(<?php echo $_GET['BookID']; ?>)">Update Book</button>
             </div>
-            <div id='errorsection'> 
+            <div id="errorsection"> 
+                Message section
                 <?php
                 //if $_SESSION['error'] is not set then set it as nothing to eliminate an undeclared variable error
-                if (!isset($_SESSION['error'])){
-                    $_SESSION['error'] = "";
+                if (!isset($_SESSION['message'])){
+                    $_SESSION['message'] = "";
                 }
-                echo $_SESSION['error'];       
-                unset ($_SESSION['error']); //this line clears what is set in the session variable['error']
+                echo $_SESSION['message'];       
+                unset ($_SESSION['message']); //this line clears what is set in the session variable['error']
                 ?>
             </div>    
         </fieldset>

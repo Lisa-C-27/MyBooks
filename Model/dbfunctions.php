@@ -27,10 +27,10 @@ function updateOneBook($postdata, $BookID) {
 
     $stmt = $conn->prepare($update_sql);
     $stmt->bindParam(':btitle', sanitise_input($postdata['BookTitle']), PDO::PARAM_STR);
-    $stmt->bindParam(':yop', sanitise_input($postdata['YearofPublication']), PDO::PARAM_STR);
+    $stmt->bindParam(':yop', sanitise_input($postdata['YearofPublication']), PDO::PARAM_INT);
     $stmt->bindParam(':name', sanitise_input($postdata['Name']), PDO::PARAM_STR);
     $stmt->bindParam(':sname', sanitise_input($postdata['Surname']), PDO::PARAM_STR);
-    $stmt->bindParam(':mils', sanitise_input($postdata['MillionsSold']), PDO::PARAM_STR);
+    $stmt->bindParam(':mils', sanitise_input($postdata['MillionsSold']), PDO::PARAM_INT);
     $stmt->bindParam(':bid', sanitise_input($BookID), PDO::PARAM_INT);
     $stmt->execute();
     if ($stmt->rowCount() > 0) {

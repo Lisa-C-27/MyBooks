@@ -2,7 +2,7 @@ function deleteBook(BookID) {
 
     var r = confirm("Are you sure you want to delete!");
     if (r == true) {
-        var $deleteurl = "../../Model/delete_process.php?BookID=" + BookID;
+        var $deleteurl = "../../Controller/delete_process.php?BookID=" + BookID;
         $.ajax( {
             url: $deleteurl,
             method: 'get',
@@ -25,17 +25,20 @@ function deleteBook(BookID) {
 
 }
 
-function updateBook() {
+function updateBook(BookID) {
+    var $updateurl = "../../Controller/update_process.php?BookID=" + BookID;
     $.ajax( {
-        url: '../../Model/update_process.php',
+        url: $updateurl,
         method: 'post',
         data: $('#update_form').serialize(),
         datatype: 'json',
-        success: function(res) {
-            console.log(res);
+        success: function(result) {
+            console.log(result);
+            $('#errorsection').html("Success");
         },
-        error: function(err) {
-            console.log(err);
+        error: function(error) {
+            console.log(error);
+            $('#errorsection').html("Error");
         }
     });
 }
