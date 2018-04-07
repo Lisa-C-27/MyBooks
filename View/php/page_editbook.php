@@ -24,17 +24,27 @@ $bookdetails = select_one_book($_GET['BookID']);
     <h2>Edit book details</h2>
     <form class="form-flex" id="update_form">
         <fieldset>
-            <div class="left-column">
-                <label for="booktitle">Book Title: </label>
-                <input id="booktitle" name="BookTitle" type="text" value="<?php echo $bookdetails['BookTitle'];?>">
-                <label for="yearofpub">Year of Publication: </label>
-                <input id="yearofpub" name="YearOfPublication" type="text" value="<?php echo $bookdetails['YearofPublication'];?>">
-                <label for="authorname">Author's Name: </label>
-                <input id="authorname" name="Name" type="text" value="<?php echo $bookdetails['Name'];?>">
-                <label for="authorsurname">Author's Surname: </label>
-                <input id="authorsurname" name="Surname" type="text" value="<?php echo $bookdetails['Surname'];?>">
-                <label for="sold">Millions Sold: </label>
-                <input id="sold" name="MillionsSold" type="text" value="<?php echo $bookdetails['MillionsSold'];?>">
+            <div class="form-group row">
+                <label for="booktitle" class="col-form-label">Book Title: </label>
+                <input class="form-control" id="booktitle" name="BookTitle" type="text" value="<?php echo $bookdetails['BookTitle'];?>">
+            </div>
+            <div class="form-group row">
+                <label for="yearofpub" class="col-form-label">Year of Publication: </label>
+                <input class="form-control" id="yearofpub" name="YearofPublication" type="text" value="<?php echo $bookdetails['YearofPublication'];?>">
+            </div>
+            <div class="form-group row">
+                <label for="authorname" class="col-form-label">Author's Name: </label>
+                <input class="form-control" id="authorname" name="Name" type="text" value="<?php echo $bookdetails['Name'];?>">
+            </div>
+            <div class="form-group row">
+                <label for="authorsurname" class="col-form-label">Author's Surname: </label>
+                <input class="form-control" id="authorsurname" name="Surname" type="text" value="<?php echo $bookdetails['Surname'];?>">
+            </div>
+            <div class="form-group row">
+                <label for="sold" class="col-form-label">Millions Sold: </label>
+                <input class="form-control" id="sold" name="MillionsSold" type="text" value="<?php echo $bookdetails['MillionsSold'];?>">
+            </div>
+            <div class="form-group row">
                 <button type="button" id="update" onclick="updateBook(<?php echo $_GET['BookID']; ?>)">Update Book</button>
             </div>
             <div id="errorsection"> 

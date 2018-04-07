@@ -8,11 +8,43 @@ html {
     font-size: 14px;
     font-family: sans-serif;
 }
-
+h1 {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 100px;
+    padding: 1%;
+    color: #373737;
+}
 h2 {
     padding: 1%;
+    font-family: 'Gloria Hallelujah', cursive;
 }
-
+/** Changing some bootstrap **/
+.bg-inverse {
+    background-color: #C38888 !important
+}
+.navbar {
+    margin-bottom: 0;
+    border: 1px solid #C38888;
+}
+.navbar-inverse {
+    border-color: #C38888;
+}
+@media (min-width: 768px){
+    .navbar {
+        border-radius: 0;    
+    }
+}
+.navbar-inverse .navbar-brand {
+    color: #372727;
+}
+.btn-primary {
+    background-color: #373737;
+    border-color: #373737;
+}
+.btn-primary:hover {
+    background-color: #C38888;
+    border-color: #C38888;
+}
 /**** Flex container ****/
 
 .flex-container {
@@ -28,9 +60,7 @@ header {
     height: 150px;
     order: 2;
 }
-.navbar {
-    margin-bottom: 1px;
-}
+
 nav {
     order: 1;
 }
@@ -40,10 +70,10 @@ nav {
     width: 100%;
 }
 footer {
-    background-color: black;
+    background-color: #372727;
     color: white;
     text-align: center;
-    height: 50px;
+    height: 80px;
     order: 4;
     padding: 1%;
 }
@@ -57,13 +87,14 @@ footer {
     padding: 1%;
     display: inline-flex;
     flex-wrap: wrap;
-    border: 1px solid grey;
+    background-color: rgba(183,183,183,0.3);
+    border: 1px solid rgba(183,183,183,0.3);
     text-align: center;
     height: auto;
     justify-content: center;
     min-width: 250px;
     max-width: 300px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 2px rgba(195,136,136,0.5);
 }
 .book_top, .book_bottom {
     width: 100%;
@@ -101,11 +132,11 @@ p.book_title {
 
 /**** Update form ****/
 .form-flex {
-    display: flex;
-    width: 80%;
+/*    display: flex;*/
+    width: 30%;
     min-height: 100%;
     margin: 0 auto;
-    flex-wrap: wrap;
+/*    flex-wrap: wrap;*/
 }
 .main-drop-down {
     width: 100%;

@@ -31,7 +31,7 @@ function updateBook(BookID) {
         url: $updateurl,
         method: 'post',
         data: $('#update_form').serialize(),
-        datatype: 'json',
+//        datatype: 'json',
         success: function(result) {
             console.log(result);
             $('#errorsection').html("Success");

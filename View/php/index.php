@@ -19,6 +19,7 @@ include '../../Model/connect.php'; //loads all database functions file
 // Need to move this into a funtion in the dbfunctions file - change the below foreach loop to a form
 
     $imagesql = "SELECT * From book INNER JOIN author ON author.AuthorID = book.AuthorID INNER JOIN image ON image.imageID = book.imageID;";
+include '../../Model/connect.php';
 //    $conn = new PDO("mysql:host=localhost;dbname=mybooks", 'root', '');
 //    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $conn->prepare($imagesql);
