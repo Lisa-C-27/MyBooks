@@ -29,6 +29,9 @@ h2 {
 .navbar-inverse {
     border-color: #C38888;
 }
+.nav-item.nav-link.active:hover {
+    color: #372727;
+}
 @media (min-width: 768px){
     .navbar {
         border-radius: 0;    
@@ -40,11 +43,16 @@ h2 {
 .btn-primary {
     background-color: #373737;
     border-color: #373737;
+    margin-bottom: 1%;
 }
-.btn-primary:hover {
+.btn-primary:hover, btn-primary:focus, btn-primary:active {
     background-color: #C38888;
     border-color: #C38888;
 }
+.form-control:focus {
+    border: 1px solid rgba(195,136,136,0.6);
+}
+
 /**** Flex container ****/
 
 .flex-container {
@@ -60,7 +68,6 @@ header {
     height: 150px;
     order: 2;
 }
-
 nav {
     order: 1;
 }
@@ -117,7 +124,7 @@ footer {
 }
 /**** Login form ****/
 .login-form {
-    height: 800px;
+    height: 700px;
     width: 50%;
     margin: 0 auto;
     vertical-align: middle;
@@ -131,41 +138,13 @@ p.book_title {
 }
 
 /**** Update form ****/
-.form-flex {
-/*    display: flex;*/
+.form-edit, .form-add{
     width: 30%;
     min-height: 100%;
     margin: 0 auto;
-/*    flex-wrap: wrap;*/
-}
-.main-drop-down {
-    width: 100%;
-    background-color: aqua;
-    height: 2em;
-    
-}
-.left-column {
-    width: 50%;
-    background-color: cadetblue;
-    height: 20em;
-    float: left;
-}
-.right-column {
-    width: 50%;
-    background-color: darkgray;
-    height: 20em;
-    float: right;
 }
 #update {
     float: right;
-}
-.form-flex label {
-    width: 50%;
-    float: left;
-}
-.form-flex input {
-    width: 50%;
-/*    float: right;*/
 }
 .buttonlink, .buttonlink:hover, .buttonlink:visited {
     text-decoration: none;

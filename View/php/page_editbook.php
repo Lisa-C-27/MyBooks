@@ -22,7 +22,7 @@ $bookdetails = select_one_book($_GET['BookID']);
 ?>
 <div class="page-flex-container">
     <h2>Edit book details</h2>
-    <form class="form-flex" id="update_form">
+    <form class="form-edit" id="update_form">
         <fieldset>
             <div class="form-group row">
                 <label for="booktitle" class="col-form-label">Book Title: </label>
@@ -45,7 +45,7 @@ $bookdetails = select_one_book($_GET['BookID']);
                 <input class="form-control" id="sold" name="MillionsSold" type="text" value="<?php echo $bookdetails['MillionsSold'];?>">
             </div>
             <div class="form-group row">
-                <button type="button" id="update" onclick="updateBook(<?php echo $_GET['BookID']; ?>)">Update Book</button>
+                <button class="btn btn-primary" type="button" id="update" onclick="updateBook(<?php echo $_GET['BookID']; ?>)">Update Book</button>
             </div>
             <div id="errorsection"> 
                 Message section

@@ -14,43 +14,71 @@
 
 <div class="page-flex-container">
     <h2>Add a book</h2>
-    <form class="form-flex">
+    <form class="form-add">
         <fieldset>
-            <div class="left-column">
-                <label for="booktitle">Book Title: </label>
-                <input id="booktitle" name="BookTitle" type="text">
-                <label for="originaltitle">Original Title: </label>
-                <input id="originaltitle" name="OriginalTitle" type="text">
-                <label for="yearofpub">Year of Publication: </label>
-                <input id="yearofpub" name="YearOfPublication" type="text">
-                <label for="genre">Genre: </label>
-                <input id="genre" name="Genre" type="text">
-                <label for="sold">Millions Sold: </label>
-                <input id="sold" name="MillionsSold" type="text">
-                <label for="language">Language Written: </label>
-                <input id="language" name="LanguageWritten" type="text">
-                <label for="rank">Ranking Score: </label>
-                <input id="rank" name="RankingScore" type="text">
-                <label for="imageURL">Image URL: </label>
-                <input id="imageURL" name="imageURL" type="text">
+            <div class="form-group row">
+                <label for="booktitle" class="col-form-label">Book Title: </label>
+                <input class="form-control" id="booktitle" name="BookTitle" type="text">
             </div>
-            <div class="right-column">
-                <label for="plot">Plot: </label>
-                <input id="plot" name="PlotSource" type="text">
-                <label for="plotsource">Plot Source: </label>
-                <input id="plotsource" name="PlotSource" type="text">
-                <label for="authorname">Author's Name: </label>
-                <input id="authorname" name="Name" type="text">
-                <label for="authorsurname">Author's Surname: </label>
-                <input id="authorsurname" name="Surname" type="text">
-                <label for="authnat">Author's Nationality: </label>
-                <input id="authnat" name="Nationality" type="text">
-                <label for="authbirth">Author's Birth Year: </label>
-                <input id="authbirth" name="BirthYear" type="text">
-                <label for="authdeath">Author's Year of Death: </label>
-                <input id="authdeath" name="DeathYear" type="text">
+            <div class="form-group row">
+                <label for="originaltitle" class="col-form-label">Original Title: </label>
+                <input class="form-control" id="originaltitle" name="OriginalTitle" type="text">
             </div>
-            <button type="submit" id="addbook">Add Book</button>
+            <div class="form-group row">
+                <label for="yearofpub" class="col-form-label">Year of Publication: </label>
+                <input class="form-control" id="yearofpub" name="YearOfPublication" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="genre" class="col-form-label">Genre: </label>
+                <input class="form-control" id="genre" name="Genre" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="sold" class="col-form-label">Millions Sold: </label>
+                <input class="form-control" id="sold" name="MillionsSold" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="language" class="col-form-label">Language Written: </label>
+                <input class="form-control" id="language" name="LanguageWritten" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="rank" class="col-form-label">Ranking Score: </label>
+                <input class="form-control" id="rank" name="RankingScore" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="imageURL" class="col-form-label">Image URL: </label>
+                <input class="form-control" id="imageURL" name="imageURL" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="plot" class="col-form-label">Plot: </label>
+                <input class="form-control" id="plot" name="PlotSource" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="plotsource" class="col-form-label">Plot Source: </label>
+                <input class="form-control" id="plotsource" name="PlotSource" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="authorname" class="col-form-label">Author's Name: </label>
+                <input class="form-control" id="authorname" name="Name" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="authorsurname" class="col-form-label">Author's Surname: </label>
+                <input class="form-control" id="authorsurname" name="Surname" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="authnat" class="col-form-label">Author's Nationality: </label>
+                <input class="form-control" id="authnat" name="Nationality" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="authbirth" class="col-form-label">Author's Birth Year: </label>
+                <input class="form-control" id="authbirth" name="BirthYear" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="authdeath" class="col-form-label">Author's Year of Death: </label>
+                <input class="form-control" id="authdeath" name="DeathYear" type="text">
+            </div>
+            <div class="form-group row">
+                <button class="btn btn-primary" type="submit" id="addbook">Add Book</button>
+            </div>
         </fieldset>
     </form>
 </div>
