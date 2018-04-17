@@ -1,6 +1,8 @@
 <?php
 session_start();
 //If user is not logged in as Manager, will not allow them to access this page and will redirect to the index page
+
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] && $_SESSION['role'] == 'Manager') {
 }
 else {
@@ -15,7 +17,7 @@ else {
     include "nav.php";
 ?>
 <div class="page-flex-container">
-    <form method="post" action="" class="form-add">
+    <form method="post" action="../../Controller/registration_process.php" class="form-add">
         <h2 class="text-center">Add User</h2>
         <div class="form-group">
             <input id="fname" class="form-control" name="firstName" type="text" placeholder="Name">

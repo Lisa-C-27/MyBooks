@@ -32,11 +32,12 @@ function updateBook(BookID) {
         method: 'post',
         data: $('#update_form').serialize(),
 //        datatype: 'json',
-        success: function(result) {
-            console.log(result);
+        success: function($result) {
+            console.log($result);
             $('#errorsection').html("Success");
         },
         error: function(error) {
+            console.log('Didnt work');
             console.log(error);
             $('#errorsection').html("Error");
         }

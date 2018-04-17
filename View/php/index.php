@@ -1,27 +1,20 @@
 <?php
-// hello lisa =)
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 }
 else {
     header("location: page_login.php");
 }
-?>
-<?php
+
 include "header.php"; //loads the header
 include "nav.php"; //loads the navigation bar
 include '../../Model/connect.php'; //loads all database functions file
-?>
 
-
-        <?php
 
 // Need to move this into a funtion in the dbfunctions file - change the below foreach loop to a form
 
     $imagesql = "SELECT * From book INNER JOIN author ON author.AuthorID = book.AuthorID INNER JOIN image ON image.imageID = book.imageID;";
-include '../../Model/connect.php';
-//    $conn = new PDO("mysql:host=localhost;dbname=mybooks", 'root', '');
-//    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include '../../Model/connect.php';
     $stmt = $conn->prepare($imagesql);
     $stmt->execute();
     $result = $stmt->fetchAll();

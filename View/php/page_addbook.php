@@ -1,6 +1,7 @@
 <?php
     session_start();
     //If user is not logged in, will not allow them to access this page and will redirect to the login page
+
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     }
     else {
@@ -13,9 +14,21 @@
 ?>
 
 <div class="page-flex-container">
-    <h2>Add a book</h2>
-    <form class="form-add">
+    <h2 class="text-center">Add a book</h2>
+    <form class="form-add" method="post" action="../../Controller/addbook_process.php">
         <fieldset>
+            <div id='errorsection'> 
+
+            <?php
+
+                //if $_SESSION['message'] is not set then set it as nothing to eliminate an undeclared variable error
+                if (!isset($_SESSION['message'])){
+                    $_SESSION['message'] = "";
+                }  
+                echo $_SESSION['message'];       
+                unset ($_SESSION['message']); //this line clears what is set in the session variable['message']
+            ?>
+        </div>
             <div class="form-group row">
                 <label for="booktitle" class="col-form-label">Book Title: </label>
                 <input class="form-control" id="booktitle" name="BookTitle" type="text">
@@ -50,7 +63,7 @@
             </div>
             <div class="form-group row">
                 <label for="plot" class="col-form-label">Plot: </label>
-                <input class="form-control" id="plot" name="PlotSource" type="text">
+                <input class="form-control" id="plot" name="Plot" type="text">
             </div>
             <div class="form-group row">
                 <label for="plotsource" class="col-form-label">Plot Source: </label>
@@ -77,9 +90,10 @@
                 <input class="form-control" id="authdeath" name="DeathYear" type="text">
             </div>
             <div class="form-group row">
-                <button class="btn btn-primary" type="submit" id="addbook">Add Book</button>
+                <button class="btn btn-primary" type="submit" id="addbook" name="addbook">Add Book</button>
             </div>
         </fieldset>
+        
     </form>
 </div>
 

@@ -21,7 +21,7 @@ $bookdetails = select_one_book($_GET['BookID']);
     
 ?>
 <div class="page-flex-container">
-    <h2>Edit book details</h2>
+    <h2 class="text-center">Edit book details</h2>
     <form class="form-edit" id="update_form">
         <fieldset>
             <div class="form-group row">
