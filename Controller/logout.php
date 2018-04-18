@@ -6,6 +6,6 @@
     unset($_SESSION['adminID']);
     unset($_SESSION['role']);
     $_SESSION['message'] = "Successfully logged out";
-    header("location: ../view/php/page_login.php");
+    header("location: ../view/html/page_login.php");
     unset($_SESSION['message']);
 ?>

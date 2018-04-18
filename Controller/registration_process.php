@@ -1,7 +1,7 @@
 <?php
 session_start();
-include '../Model/connect.php';
-include '../Model/dbfunctions.php';
+include '../model/connect.php';
+include '../model/dbfunctions.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //if the form values has been posted
 	//input sanitation
 	$username = !empty($_POST['username'])? sanitise_input(($_POST['username'])): null; //if the POST username is not empty then(?) get the value and complete the try section, else(:) set the value to null
@@ -26,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //if the form values has been posted
             $stmt = $conn->prepare($insertadmin);
             $stmt->execute();
             $_SESSION['message'] = "User created successfully";
-            header('location: ../View/php/page_adduser.php');
+            header('location: ../view/html/page_adduser.php');
         } else {
             $_SESSION['message'] = "Username already exists";   
-            header('Location: ../View/php/page_adduser.php');        
+            header('Location: ../view/html/page_adduser.php');        
         }     
         }
     }
@@ -39,4 +39,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //if the form values has been posted
     }
 }
              
+             
+             
+             
+             
+             
+             
+//		if($_REQUEST['action_type'] == 'add'){ //if the action type is add
+//        $data = //set the variable $data within the insertData($table,$data) function to the following array
+//        array(
+//            'username' => $username,
+//            'password' => $password,
+//            );
+//		$table="login"; //table name in DB to insert data into
+//		//function call from db_functions.php
+//		insertData($table,$data);
+//		header('location:../view/html/loggedin_page.php'); //where to redirect when registration is successful
+//		}
+//	}
+//		catch(PDOException $e)
+//		{
+//			echo "Error: ".$e -> getMessage();
+//			die();
+//		}
+//}
 ?>

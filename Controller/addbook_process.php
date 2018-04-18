@@ -1,10 +1,7 @@
 <?php
-
-// This isn't working
-
 session_start();
-include '../Model/connect.php';
-include '../Model/dbfunctions.php';
+include '../model/connect.php';
+include '../model/dbfunctions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //if the form values has been posted
 	//input sanitation
@@ -50,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //if the form values has been posted
             $stmt->execute();
             
             $_SESSION['message'] = "Book added successfully";
-            header('Location: ../View/php/page_addbook.php');
+            header('Location: ../view/html/page_addbook.php');
         }
     }
      catch(PDOException $e) {

@@ -1,89 +1,5 @@
-/**** CSS Reset and base font set ****/
-html, body, header, nav, footer, section, form, fieldset, label, input, textarea, p, div, h1, h2, h3, h4, h5, h6 {
-    border: 0;
-    margin: 0;
-    padding: 0;   
-}
-html {
-    font-size: 14px;
-    font-family: sans-serif;
-}
-h1 {
-    font-family: 'Cabin Sketch', cursive;
-    font-size: 100px;
-    padding: 1%;
-    color: #574B7F;
-}
-h2 {
-    padding: 1%;
-    font-family: 'Gloria Hallelujah', cursive;
-}
-/** Changing some bootstrap **/
-.bg-inverse {
-    background-color: #8C79CC !important
-}
-.navbar {
-    margin-bottom: 0;
-    border: 1px solid #8C79CC;
-}
-.navbar-inverse {
-    border-color: #8C79CC;
-}
-.nav-item.nav-link.active:hover {
-    color: #574B7F;
-}
-@media (min-width: 768px){
-    .navbar {
-        border-radius: 0;    
-    }
-}
-.navbar-inverse .navbar-brand {
-    color: #574B7F;
-}
-.btn-primary {
-    background-color: #574B7F;
-    border-color: #574B7F;
-    margin-bottom: 1%;
-}
-.btn-primary:hover, btn-primary:focus, btn-primary:active {
-    background-color: #8C79CC;
-    border-color: #8C79CC;
-}
-.form-control:focus {
-    border: 1px solid rgba(87,75,127,0.6);
-}
+/**** Book container ****/
 
-/**** Flex container ****/
-
-.flex-container {
-    display: flex;
-    background-color: black;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-}
-header {
-    background-image: url(../img/banner.jpg);
-    text-align: center;
-    height: 150px;
-    order: 2;
-}
-nav {
-    order: 1;
-}
-.page-flex-container {
-    background-color: #FCFCFC;
-    order: 3;
-    width: 100%;
-}
-footer {
-    background-color: #75727F;
-    color: white;
-    text-align: center;
-    height: 80px;
-    order: 4;
-    padding: 1%;
-}
 .outer-book-container {
     display: flex;
     width: 100%;
@@ -94,14 +10,14 @@ footer {
     padding: 1%;
     display: inline-flex;
     flex-wrap: wrap;
-    background-color: rgba(234,227,255,0.5);
-    border: 1px solid rgba(234,227,255,0.5);
+/*    background-color: rgba(234,227,255,0.5);*/
+    border: 1px solid #3E7F4F;
     text-align: center;
     height: auto;
     justify-content: center;
     min-width: 250px;
     max-width: 300px;
-    box-shadow: 2px 2px 2px rgba(87,75,127,0.5);
+/*    box-shadow: 2px 2px 2px rgba(87,75,127,0.5);*/
 }
 .book_top, .book_bottom {
     width: 100%;
@@ -115,24 +31,13 @@ footer {
 .book_top p {
     padding: 0;
     margin: 0;
-    width: 100%;
-    
+    width: 100%;   
 }
 .book_top p:nth-of-type(2) {
     position: absolute;
     bottom: 5px;
 }
-/**** Login form ****/
-.login-form {
-    height: 700px;
-    width: 50%;
-    margin: 0 auto;
-    vertical-align: middle;
-    padding-top: 10%;
-    padding-bottom: 10%;
-}
 
-/***** Index page *****/
 p.book_title {
     font-size: 18px;
 }
@@ -149,4 +54,11 @@ p.book_title {
 .buttonlink, .buttonlink:hover, .buttonlink:visited {
     text-decoration: none;
     color: white;
+}
+#errorsection {
+    margin-left: -10px;
+    font-size: 20px;
+}
+.container.login {
+    padding-top: 80px;
 }

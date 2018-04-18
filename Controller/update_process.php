@@ -1,9 +1,15 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-include '../Model/connect.php';
-include '../Model/dbfunctions.php';
+include '../model/connect.php';
+include '../model/dbfunctions.php';
+?>
+<?php
 
+
+?>
+
+<?php
 if(isset($_GET['BookID'])) {
     $result = select_one_book($_GET['BookID']);
     if(is_array($result)) {
@@ -23,4 +29,12 @@ if(isset($_GET['BookID'])) {
     }
     exit();
 }
+
+//if (updateOneBook($_POST, $_GET['BookID'])) {
+//$_SESSION['error'] = 'done';
+//    header('Location: page_editbook.php');
+//} else {
+//echo 'error';
+//}
+
 ?>

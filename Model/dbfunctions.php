@@ -3,6 +3,15 @@
 //header('Content-Type: application/json');
 // include 'connect.php';
 
+function getAllBooks() {
+    $booksql = "SELECT * From book 
+    INNER JOIN author ON author.AuthorID = book.AuthorID 
+    INNER JOIN image ON image.imageID = book.imageID;";
+    include 'connect.php';
+    $stmt = $conn->prepare($booksql);
+    $stmt->execute();
+    return $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function delete_book($BookID) {
     $delete_sql = "DELETE FROM book WHERE BookID='" . $_GET['BookID'] . "'";
@@ -30,7 +39,6 @@ function updateOneBook($postdata, $BookID) {
     $surname = sanitise_input($postdata['Surname']);
     $mils = sanitise_input($postdata['MillionsSold']);
     
-    
     include 'connect.php';
     $update_sql = "UPDATE book 
     INNER JOIN author ON author.AuthorID = book.AuthorID 
@@ -48,7 +56,7 @@ function updateOneBook($postdata, $BookID) {
 //    $stmt->bindParam(':mils', $postdata['MillionsSold'], PDO::PARAM_STR);
 //    $stmt->bindParam(':bid', $BookID, PDO::PARAM_INT);
     $stmt->execute(); 
-    if ($stmt->rowCount() > 0) {   
+    if ($stmt->rowCount() > 0) {  
         $adminID = ($_SESSION['adminID']);
         $insertupdate = "INSERT INTO update_book (adminID, bookID) VALUES ('$adminID','$BookID')";
         $stmt = $conn->prepare($insertupdate);
@@ -59,6 +67,17 @@ function updateOneBook($postdata, $BookID) {
     }
 }
 
+function allUpdateDetails() {
+    $updateDetails = "SELECT book.BookTitle, CONCAT(admin.firstName, ' ', admin.lastName) AS 'Admin', update_book.lastUpdated, admin.role FROM `update_book` 
+    INNER JOIN admin ON admin.adminID = update_book.adminID 
+    INNER JOIN book ON book.BookID = update_book.bookID 
+    ORDER BY update_book.lastUpdated DESC;";
+    include 'connect.php';
+    $stmt = $conn->prepare($updateDetails);
+    $stmt->execute();
+    return $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+//need to sanitise input on the $postdata before the bindparam
 function sanitise_input($input_string) {
     include 'connect.php';
     $input_string = trim($input_string);
@@ -67,5 +86,7 @@ function sanitise_input($input_string) {
     $input_string = strip_tags($input_string);
     return $input_string;
 }
-
+//function edit_book($BookID) {
+//    $edit_sql = ""
+//}
 ?>

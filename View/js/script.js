@@ -2,7 +2,7 @@ function deleteBook(BookID) {
 
     var r = confirm("Are you sure you want to delete!");
     if (r == true) {
-        var $deleteurl = "../../Controller/delete_process.php?BookID=" + BookID;
+        var $deleteurl = "../../controller/delete_process.php?BookID=" + BookID;
         $.ajax( {
             url: $deleteurl,
             method: 'get',
@@ -26,7 +26,7 @@ function deleteBook(BookID) {
 }
 
 function updateBook(BookID) {
-    var $updateurl = "../../Controller/update_process.php?BookID=" + BookID;
+    var $updateurl = "../../controller/update_process.php?BookID=" + BookID;
     $.ajax( {
         url: $updateurl,
         method: 'post',
