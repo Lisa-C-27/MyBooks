@@ -9,6 +9,6 @@ It needs to be able to do the following:
  - Display book info with images from the database
  - Admin can add new books and update existing book info
  - Admin can delete books
- - From input must be validated and sanitised
+ - Form input must be validated and sanitised
  - PHP PDO extension is to be used
  - The website must be responsive, simple and professional
