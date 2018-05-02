@@ -22,16 +22,16 @@ include '../../model/dbfunctions.php';
     <form method="post" action="../../Controller/registration_process.php" class="form-add">
         <h2 class="text-center">Add User</h2>
         <div class="form-group">
-            <input id="fname" class="form-control" name="firstName" type="text" placeholder="Name">
+            <input id="fname" class="form-control" name="firstName" type="text" placeholder="Name" pattern="[A-Za-z\s\-']{1,30}" required title="Please enter the employee's name. This field can only contain letters, spaces, hyphens and apostrophes">
         </div>
         <div class="form-group">
-            <input id="lname" class="form-control" name="lastName" type="text" placeholder="Surname">
+            <input id="lname" class="form-control" name="lastName" type="text" placeholder="Surname" pattern="[A-Za-z\s\-']{1,30}" required title="Please enter the employee's surname. This field can only contain letters, spaces, hyphens and apostrophes">
         </div>
         <div class="form-group">
-            <input id="newusername" class="form-control" name="username" type="text" placeholder="Username">
+            <input id="newusername" class="form-control" name="username" type="text" placeholder="Username" pattern="[A-Za-z0-9]{1,20}" title="Please enter a username for the employee. This field can only contain 'letters' and 'numbers' up to a maximum of 20.">
         </div>
         <div class="form-group">
-            <input id="password" name="password" type="password" class="form-control"placeholder="Password">             
+            <input id="password" name="password" type="password" class="form-control"placeholder="Password" pattern=".{7,30}" title="Password must be a minimum of 7 characters.">             
         </div>
         <div class="form-group">
             <div class="form-check">

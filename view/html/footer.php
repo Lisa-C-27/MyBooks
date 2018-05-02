@@ -40,11 +40,6 @@
         <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
         <!-- Custom scripts for all pages-->
         <script src="../js/sb-admin.min.js"></script>
-        <!-- Custom scripts for this page-->
-<!--
-        <script src="../js/sb-admin-datatables.min.js"></script>
-        <script src="../js/sb-admin-charts.min.js"></script>
--->
         <!-- Ajax script -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- My scripts -->

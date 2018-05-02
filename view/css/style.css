@@ -1,0 +1,84 @@
+/**** Book container ****/
+
+.outer-book-container {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+}
+.inner-book-container {
+    margin: 1%;
+    padding: 1%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    border: 1px solid #3E7F4F;
+    text-align: center;
+    height: auto;
+    justify-content: center;
+    min-width: 250px;
+    max-width: 300px;
+}
+.book_top, .book_bottom {
+    width: 100%;
+}
+.book_top {
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.book_top p {
+    padding: 0;
+    margin: 0;
+    width: 100%;   
+}
+.book_top p:nth-of-type(2) {
+    position: absolute;
+    bottom: 5px;
+}
+p.book_title {
+    font-size: 18px;
+}
+
+/**** Update/addbook form ****/
+
+.form-edit, .form-add{
+    width: 30%;
+    min-height: 100%;
+    margin: 0 auto;
+}
+#update {
+    float: right;
+}
+.buttonlink, .buttonlink:hover, .buttonlink:visited {
+    text-decoration: none;
+    color: white;
+}
+a button {
+    min-width: 71.63px;
+    margin-right: 5px;
+}
+
+/** Error section **//
+
+#errorsection {
+    margin-left: -10px;
+    font-size: 20px;
+}
+
+/** Login page **/
+
+.container.login {
+    padding-top: 80px;
+}
+
+/** Images **/
+
+img {
+    width: 203px;
+    height: 297px;
+}
+img#preview {
+    border: 1px solid rgba(0,0,0,.15);
+    margin-left: 5px;
+}
+
