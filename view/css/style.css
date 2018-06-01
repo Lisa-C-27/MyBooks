@@ -42,9 +42,19 @@ p.book_title {
 /**** Update/addbook form ****/
 
 .form-edit, .form-add{
-    width: 30%;
     min-height: 100%;
     margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+    .form-edit, .form-add{
+    width: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    .form-edit, .form-add{
+    width: 30%;
+    }
 }
 #update {
     float: right;
